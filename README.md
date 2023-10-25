@@ -12,10 +12,10 @@ First, I've educated myself on the best practices for testing third-party APIs. 
 
 After this, I planned the testing process by researching common tools, libraries, and programming languages used in this context. With necessary knowledge of theCatAPI, I created a test plan, defining the test cases that cover our API usage, following the structured "given, when, then" approach with an emphasis on scalability and automation.
 
-Once the test plan was in place, I proceeded to write and validate the tests. Once satisfied with the test suite, my focus shifted to automating the testing process, seeking ways to execute the scripts automatically. This approach ensures an efficient testing strategy for theCatAPI.
+Once the test plan was in place, I proceeded to write and validate the tests. When satisfied with the test suite, my focus shifted to automating the testing process, seeking ways to execute the scripts automatically. This approach ensures an efficient testing strategy for theCatAPI.
 
 **c)**
-Executable tests can be found under tests/test_theCatAPI_api.py or [here](./tests/test_theCatAPI_api.py).
+Executable tests can be found under [tests/test_theCatAPI_api.py](./tests/test_theCatAPI_api.py). To run the tests, please refer to [tests/README.md](./tests/README.md)
 
 **d)**
 In our situation, we have a partial solution at our disposal through theCatAPI Postman collection. We can build upon this to establish a cost-effective automated testing process. However, for a more robust approach to automation testing, we can implement Git hooks that initiate a Jenkins job, running our designated test script. This Jenkins job should be configured to execute at relevant actions, such as before finalizing a pull request, merging into a major branch, and moving a release candidate image to the next environment. This ensures that third-party service is thoroughly tested and any defects are not mistakenly attributed to them.
@@ -44,5 +44,6 @@ Suitability for indoors living could be covered with `adaptability` attribute.
 There are inconsistencies with provided data. `shedding` attribute ranges from 1-5 while most attributes range from 0-5 (hairless breed could be considered as `shedding: 0`). `indoor` is not very descriptive as a true-false value, even more so as only one breed is marked as `indoor: true`.
 
 **c)**
-Demo can be found under public/index.html or [here](./public/index.html).
+Demo solution can be found under [demo/index.html](./demo/index.html).
+
 Since filtering cat breeds is limited on server side, we send a request for all available breeds and then filter them on clients' side. We filter the list by attributes `lifespan`, `indoor`, `dog_friendly`, `affection_level`, `rare`, `shedding_level` and `hairless`. Now, we can send a request for cat of specific breed(s) that satisfy our criteria (e.g. https://api.thecatapi.com/v1/images/search?breed_ids=awir,siam).
