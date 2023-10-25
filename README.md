@@ -15,7 +15,7 @@ After this, I planned the testing process by researching common tools, libraries
 Once the test plan was in place, I proceeded to write and validate the tests. Once satisfied with the test suite, my focus shifted to automating the testing process, seeking ways to execute the scripts automatically. This approach ensures an efficient testing strategy for theCatAPI.
 
 **c)**
-
+Executable tests can be found under tests/test_theCatAPI_api.py or [here](./tests/test_theCatAPI_api.py).
 
 **d)**
 In our situation, we have a partial solution at our disposal through theCatAPI Postman collection. We can build upon this to establish a cost-effective automated testing process. However, for a more robust approach to automation testing, we can implement Git hooks that initiate a Jenkins job, running our designated test script. This Jenkins job should be configured to execute at relevant actions, such as before finalizing a pull request, merging into a major branch, and moving a release candidate image to the next environment. This ensures that third-party service is thoroughly tested and any defects are not mistakenly attributed to them.
