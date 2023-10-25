@@ -18,47 +18,74 @@
     <script src="index.js"></script>
     <div class="container">
       <header class="header clearfix" style="background-color: #ffffff">
-        
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li><a href="#">FindItForMe</a></li>
-          </ul>
-        </nav>
 
-        <h1 class="h3 text-muted">Shoppy shop</h1>
+        <h1 class="h3 text-muted">Demo</h1>
 
       </header>
 
       <div class="page-heading">
 
-        <h1>Summer sale</h1>
+        <h1>Cats cats cats</h1>
 
       </div>
 
       <div class="row">
 
-        <div class="col-sm-3">
+        <div class="col-sm-2">
 
           <img class="adSpace">
       
         </div>
 
-        <div class="col-sm-6">
+        
+        <div class="col-sm-4">
+          <h3>Filters: </h3>
+          <label>Lifespan: </label> 
+          <label id="sliderVal_lifespan" class="sliderVal"></label>
+          <input id="slider_lifespan" class="slider" type="range" min="0" max="20" value="15" oninput="sliderLifespanFunc()">
+          <label id="sliderVal_lifespan" class="sliderVal"></label>
 
-          <div class="page-contents">
+          <br/>
+          <label>Dog friendly: </label> 
+          <label id="sliderVal_dog_friendly" class="sliderVal"></label>
+          <input id="slider_dog_friendly" class="slider" type="range" min="0" max="5" value="5" oninput="sliderDogFriendlyFunc()">
+          <label id="sliderVal_dog_friendly" class="sliderVal"></label>
+          
+          <br/>
+          <label>Affection level: </label> 
+          <label id="sliderVal_affection_level" class="sliderVal"></label>
+          <input id="slider_affection_level" class="slider" type="range" min="0" max="5" value="5" oninput="sliderAffectionLevelFunc()">
+          <label id="sliderVal_affection_level" class="sliderVal"></label>
 
-            <h2>Sub Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-            <h4>Sub Heading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-            <h4>Sub Heading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          <br/>
+          <label>Shedding level: </label> 
+          <label id="sliderVal_shedding_level" class="sliderVal"></label>
+          <input id="slider_shedding_level" class="slider" type="range" min="1" max="5" value="2" oninput="sliderSheddingLevelFunc()">
+          <label id="sliderVal_shedding_level" class="sliderVal"></label>
 
-          </div>
-
+          <br/>
+          <input type="checkbox" id="checkbox_hairless" oninput="checkboxHairlessFunc()">
+          <label for="checkbox_hairless"> Hairless</label> 
+          
+          <br/>
+          <input type="checkbox" id="checkbox_rare">
+          <label for="checkbox_rare"> Rare</label> 
+          
+          <br/>
+          <input type="checkbox" id="checkbox_indoor">
+          <label for="checkbox_indoor"> Indoor</label> 
+          
+          <br/>
+          <button onclick="filterByRequierments()">Filter</button>
+        
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-4">
+          <p id="text_filterResult"></p>
+        </div>
+          
+
+        <div class="col-sm-2">
 
           <img class="adSpace">
           

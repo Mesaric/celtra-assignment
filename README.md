@@ -19,3 +19,26 @@ Executable tests can be found under tests/test_theCatAPI_api.py or [here](./test
 
 **d)**
 In our situation, we have a partial solution at our disposal through theCatAPI Postman collection. We can build upon this to establish a cost-effective automated testing process. However, for a more robust approach to automation testing, we can implement Git hooks that initiate a Jenkins job, running our designated test script. This Jenkins job should be configured to execute at relevant actions, such as before finalizing a pull request, merging into a major branch, and moving a release candidate image to the next environment. This ensures that third-party service is thoroughly tested and any defects are not mistakenly attributed to them.
+
+## 2.
+**a)**
+TheCatAPI should supply the following information about a breed: 
+- average lifespan,         
+- suitability for indoors living,
+- compatibility with dogs,
+- loyalty characteristics,
+- easy to get,
+- presence of fur, and if so, the shedding level.
+
+**b)**
+I belive the API satisfies the user story. After further examination of API, needed information are covered with these attributes: 
+- average lifespan > life_span,
+- compatibility with dogs > dog_friendly,
+- loyalty characteristics > affection_level, 
+- easy to get (CTO needs it as soon as possible) > rare,
+- presence of fur, and if so, the shedding level > shedding_level, hairless.
+There are inconsistencies with provided data. `sheding` attribute ranges from 1-5 while most attributes range from 0-5 (hairless breed could be considered as `sheding` equals 0). `indoor` is not very descriptive as a true-false value, even more so as only one breed is marked as `indoor` equals true. Suitabilitiy for indoors living could somewhat be covered with `adaptability` attribute. 
+
+**c)**
+Demo can be found under public/index.html or [here](./public/index.html).
+Since filtering cat breeds is limited on server side, we send a request for all available breeds and then filter them on clients' side. We filter the list by attributes `lifespan`, `indoor`, `dog_friendly`, `affection_level`, `rare`, `shedding_level` and `hairless`. With the list of suitable breeds, we can now send a request for a cat (e.g. https://api.thecatapi.com/v1/images/search?breed_ids=awir,siam).
