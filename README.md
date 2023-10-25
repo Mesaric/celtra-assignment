@@ -44,5 +44,6 @@ Suitability for indoors living could be covered with `adaptability` attribute.
 There are inconsistencies with provided data. `shedding` attribute ranges from 1-5 while most attributes range from 0-5 (hairless breed could be considered as `shedding: 0`). `indoor` is not very descriptive as a true-false value, even more so as only one breed is marked as `indoor: true`.
 
 **c)**
-Demo can be found under public/index.html or [here](./public/index.html).
+Demo solution can be found under demo/index.html or [here](./demo/index.html).
+
 Since filtering cat breeds is limited on server side, we send a request for all available breeds and then filter them on clients' side. We filter the list by attributes `lifespan`, `indoor`, `dog_friendly`, `affection_level`, `rare`, `shedding_level` and `hairless`. Now, we can send a request for cat of specific breed(s) that satisfy our criteria (e.g. https://api.thecatapi.com/v1/images/search?breed_ids=awir,siam).
