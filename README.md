@@ -29,16 +29,20 @@ TheCatAPI should supply the following information about a breed:
 - loyalty characteristics,
 - easy to get,
 - presence of fur, and if so, the shedding level.
+Furthermore, API should be able to return a cat of a specific breed(s). 
 
 **b)**
-I belive the API satisfies the user story. After further examination of API, needed information are covered with these attributes: 
-- average lifespan > life_span,
-- compatibility with dogs > dog_friendly,
-- loyalty characteristics > affection_level, 
-- easy to get (CTO needs it as soon as possible) > rare,
-- presence of fur, and if so, the shedding level > shedding_level, hairless.
-There are inconsistencies with provided data. `sheding` attribute ranges from 1-5 while most attributes range from 0-5 (hairless breed could be considered as `sheding` equals 0). `indoor` is not very descriptive as a true-false value, even more so as only one breed is marked as `indoor` equals true. Suitabilitiy for indoors living could somewhat be covered with `adaptability` attribute. 
+We believe the API satisfies the user story. After further examination of API, needed information are covered with these attributes: 
+- average lifespan > `life_span`,
+- compatibility with dogs > `dog_friendly`,
+- loyalty characteristics > `affection_level`, 
+- easy to get (CTO needs it as soon as possible) > `rare`,
+- presence of fur, and if so, the shedding level > `shedding_level`, `hairless`.
+
+Suitability for indoors living could be covered with `adaptability` attribute. 
+
+There are inconsistencies with provided data. `shedding` attribute ranges from 1-5 while most attributes range from 0-5 (hairless breed could be considered as `shedding: 0`). `indoor` is not very descriptive as a true-false value, even more so as only one breed is marked as `indoor: true`.
 
 **c)**
 Demo can be found under public/index.html or [here](./public/index.html).
-Since filtering cat breeds is limited on server side, we send a request for all available breeds and then filter them on clients' side. We filter the list by attributes `lifespan`, `indoor`, `dog_friendly`, `affection_level`, `rare`, `shedding_level` and `hairless`. With the list of suitable breeds, we can now send a request for a cat (e.g. https://api.thecatapi.com/v1/images/search?breed_ids=awir,siam).
+Since filtering cat breeds is limited on server side, we send a request for all available breeds and then filter them on clients' side. We filter the list by attributes `lifespan`, `indoor`, `dog_friendly`, `affection_level`, `rare`, `shedding_level` and `hairless`. Now, we can send a request for cat of specific breed(s) that satisfy our criteria (e.g. https://api.thecatapi.com/v1/images/search?breed_ids=awir,siam).

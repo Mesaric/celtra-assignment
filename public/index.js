@@ -54,7 +54,6 @@ function filterByRequierments() {
             }
             text += "</ul>"
             textBoxElement.innerHTML = text
-
             console.log(result)
         })
         .catch(err => console.log(err))
